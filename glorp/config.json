@@ -1,0 +1,19 @@
+{
+    "guildId": "1524404230746673233",
+    "visitorRole": "1524429288273739906",
+    "memberRole": "1524418631302254766",
+    "welcomeChannel": "1524412969621000294",
+    "logChannel": "1524415543195602964",
+
+    "farmadorAuraRole": "1524431336490663997",
+    "viadoRole": "1524460653236981911",
+    "sigmaRole": "1524460837849268306",
+    "sixSevenRole": "1524461032678883438",
+
+    "minecraftStatusChannel": "1527010273645433002",
+    "minecraftStatusMessage": "1527010528679952496",
+
+    "minecraftHost": "published-penalties.gl.at.ply.gg",
+    "minecraftPort": 27322,
+    "minecraftDisplayIp": "runage.tech"
+}

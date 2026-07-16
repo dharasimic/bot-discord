@@ -1,0 +1,11 @@
+{
+  "name": "meu-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "commonjs",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.26.4",
+    "dotenv": "^17.4.2"
+  }
+}
