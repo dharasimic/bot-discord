@@ -4,6 +4,8 @@ const config = require("../config.json");
 
 module.exports = (client) => {
 
+    let wasOnline = null;
+
     async function atualizarPainel() {
 
         try {
@@ -15,6 +17,35 @@ module.exports = (client) => {
                 config.minecraftHost,
                 config.minecraftPort
             );
+
+            const isOnline = true;
+
+            if (wasOnline === false) {
+
+                try {
+
+                    const alertChannel = await client.channels.fetch(config.minecraftBackOnlineChannel);
+
+                    if (alertChannel) {
+
+                        await alertChannel.send({
+                            content: `<@&${config.minecraftBackOnlineRole}> O servidor Minecraft voltou ao ar!`,
+                            allowedMentions: {
+                                roles: [config.minecraftBackOnlineRole]
+                            }
+                        });
+
+                    }
+
+                } catch (alertError) {
+
+                    console.error("Erro ao enviar aviso de retorno do Minecraft:", alertError);
+
+                }
+
+            }
+
+            wasOnline = isOnline;
 
             let jogadores = "Nenhum jogador online.";
 
@@ -78,6 +109,8 @@ module.exports = (client) => {
 
         } catch (err) {
 
+            wasOnline = false;
+
             console.error(err);
 
             try {
@@ -118,7 +151,7 @@ module.exports = (client) => {
 
     }
 
-    client.once("clientReady", async () => {
+    client.once("ready", async () => {
 
         console.log("Sistema de status do Minecraft iniciado.");
 
