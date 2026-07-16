@@ -1,4 +1,4 @@
-# botDiscordCupula
+# Bot de discord
 
 Projeto pessoal de um bot para Discord, desenvolvido na pasta `glorp/`.
 
